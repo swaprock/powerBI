@@ -1,0 +1,483 @@
+POwerBI 
+
+*****************
+
+Summuary :- 
+
+SQL is used to insert data 
+
+Collab - online analytical processing
+
+Data Modeling -
+Data modeling is the process of diagramming data flows.
+ When creating a new or alternate database structure, 
+the designer starts with a diagram of how data will flow into and out of 
+the database.
+
+Star Scheme -
+A star schema is a database organizational structure optimized 
+for use in a data warehouse or business intelligence that uses a 
+single large fact table to store transactional or measured data, 
+and one or more smaller dimensional tables that store attributes 
+about the data. 
+
+OLTP online transaction process 
+
+OLTP, or online transactional processing, 
+enables the real-time execution of large numbers of database transactions 
+by large numbers of people, typically over the internet. 
+A database transaction is a change, insertion, deletion, 
+or query of data in a database.
+
+As a Database 
+now think about amazon 
+scales amount , quantiy, shipping address , product 
+what OLTP do is store all this in one table
+every one is pointing to single database 
+and concurrency is higher 
+
+
+OLAP online analytical process 
+
+Analysis Services. Online analytical processing (OLAP) is a 
+technology that organizes large business databases and 
+supports complex analysis. It can be used to perform complex analytical
+queries without negatively affecting transactional systems.
+
+only organaization is able to view the data 
+limited people have the access to view the cart 
+here cocurrency is less
+
+
+---------
+
+we will use Power BI which is a tool 
+Tablue is advance
+
+----------
+
+for the reports to be faster we need to use olab database 
+
+report creatation should be used keeping in view the customers 
+
+keep in mind the audience  while creating the reports 
+
+bcoz everyone doesnt need same data 
+
+------------
+
+data lake - OLAP
+datalake is a collection of different data sources 
+
+------
+
+star scheme - consits of dimension and fact table  
+
+4 corners Dimension 
+and the center point is called the fact table.
+
+A fact table holds the data to be analyzed, 
+
+Dimension table stores data about the ways in which
+the data in the fact table can be analyzed
+
+-------
+
+Normalization is the technique of dividing the data into multiple tables
+to reduce data redundancy and inconsistency and to achieve data integrity.
+
+Denormalization is the technique of combining the data into a single table
+to make data retrieval faster.
+
+It is used to add the redundancy to execute the query quickly.
+
+-------
+
+Data warehouse 
+
+has 2 components 
+
+ETL and reporting 
+
+ETL - extract, transform and load
+
+ETL stands for extract, transform, and load and is a traditionally 
+accepted way for organizations to combine data from multiple systems
+into a single database, data store, data warehouse, or data lake.
+
+data comes from website to OLTP 
+to bring the data in datalake we require using ETL 
+
+As the data is loaded into the data warehouse or data lake, 
+the ETL tool sets the stage for long-term analysis and usage of such data.
+ Examples include banking data, insurance claims, and retail sales history.
+
+
+raw data - OLTP -  order confirm - data lake / data warehouse - 
+
+-----------
+Deep architecture refers to a long chain of links, leading to inner pages, 
+
+Flat architecture refers to a system where practically no link chains exist
+and each page can be reached in one, two or three links.
+ 
+Having a flat website makes it possible to access each page on your 
+website quickly.
+
+--------
+
+
+***************************************************************************
+
+Lets start with POWER BI 
+
+Max time goes in data prep 
+---------------
+
+From where do i bring the data 
+or 
+1> where is the data ? 
+
+-cloud
+
+- on permises 
+local database 
+
+typical db supported by power BI 
+as power BI is a microsoft hence it will store data on Azure Block storage 
+
+some organaization can use another local database 
+
+
+
+----------------
+
+2> how to connect ?
+
+-import data
+
+brings all the data from sql into powerbi 
+gets the data from sql server
+performs an in memory operation
+
+problems with import data is data retervial is slow 
+high amount of data needs to be downloaded from foriegn server 
+
+you cannot have data with 1GB or more 
+power BI can handle just 1 GB of data 
+For more than 1 GB you need to use tablue 
+
+data gets loaded into the ram 
+
+
+- direct query 
+directly connecting to SQL server 
+
+problem - slow in updating the reports 
+data is again and again going back and coming 
+
+laptop is free from memory 
+
+
+
+---------------
+
+in tablue we have two options to connect 
+
+- live 
+-extract 
+
+-----------------
+
+
+3> how do you refresh 
+
+gateway - you have created your report 
+it is a acess between SQL server and user 
+
+-presonal gateway 
+it is my personal gateway and Iam giving access to 4 people 
+
+
+- on premise data gateway 
+if we have created a gateway 
+and someone else wants to see it 
+then we create a personal gateway 
+so that we can share it someelse who wants to see it 
+
+used for sharing info in same orginazation 
+
+anyone accessing the reports need to have a email id 
+
+
+-----------
+
+OLAP is read only 
+no write 
+no insert  
+
+-------------
+
+Lets see Data ON Premises 
+
+
+this is OLTP bcoz we havent combined this 3 datas into single data OLAP
+
+########################
+
+lets us study power BI 
+
+There are 3 componenets in BI 
+
+1.PBI desktop (application for dekstop)
+creation is done on desktop 
+
+2.PBI - services (web app)
+limited functionality 
+
+
+3.PBI - Mobile (used on mobile devices )
+
+why is PBI so popular ?
+
+bcoz it is free 
+
+---------------------
+
+diffrence between PBI and other 
+- free 
+- support uptop only 1 GB 
+- doesnt support real time connections
+
+------------------
+
+Experience your data . Any data ,any way , anywhere 
+
+PBI is a cloud based business analytics that enables  
+
+-fast - building a report or accessing the data 
+- a live 360 degreee view of your business  - we can create a data lake 
+-helps us in data discovery and exploration - EDA 
+instead of wriiting a query , open the data in PBI
+-insights from any device - use on any device 
+-collaboration across any orgn - any one can see it 
+-anyone can visualize and analyze data -we can provide excel instead of graph
+
+1000-10,000 limit 
+
+---------------------
+
+Key Benefits and differentiators of Power BI 
+
+- pre built dashboards and reports for popular SaaS solutions 
+
+- real time dashboards update - you can shedule your refresh you want 
+
+Live database are not supported by PBI 
+
+- we can do NLP on PBI 
+
+- INtegrated to microsoft product 
+
+- fast deployment 
+
+-------------------------
+
+report vs visuailition 
+
+Report's is what PBI desktop creates 
+
+gets publish to PBI services
+from that only few info is required 
+so that selected info is displayed via visualization 
+
+
+--------------
+
+4 key steps of PBI 
+
+1.prepare -  
+2.Explore 
+3.Report  - combination of multiple tabs 
+one tab for CO , one for Manager , one for freshers 
+
+4.Share 
+
+----------
+
+Sales rep vs sales manager vs sales director 
+
+----------
+
+Knowledge discory is data mining process 
+
+----------
+
+Ques - you have one table sales table , sales date , sales amtn 
+skips 2 dates but prints it 
+we will do left join with a date coulmn 
+
+-----------
+
+I want to become a smart data scienctics / analytics
+
+---------
+
+
+POWER BI 
+
+page1 page2 
+
+the writing area in a  page is called canvas 
+
+collection of pages is know as reports 
+
+-------------
+
+3 icons on the left 
+
+- report view  - what we create
+ 
+- data view - what is coming from OLTP / or if we want to do some filtering
+/create some new column / sometime we want to add additional field
+
+- model view - tables which cannot be join 
+
+you cannot join two fact tables 
+sales and finances 
+they dont have primary keys 
+
+
+question can come what does the views does 
+
+--------------
+
+Cardinality - types of relationship in joins 
+
+
+one to many 
+dimension table is always one 
+and 
+fact table is many 
+
+--------------
+
+ON the left side we have 3 drag options 
+
+1.Fields 
+- gives you all the tables and the columns 
+2.VIsualizations 
+-shortcuts to create the barplots and pie chart
+This is the core tab 
+3.Filters 
+- we can ask to show us top 10 filter 
+
+diffrn types of filters :- 
+ 
+-report level
+-page  level 
+-tile level
+
+
+
+with a tile - is tables 
+without a tile - it is called sheets 
+
+
+
+Here we imported a Excel file and skila DB from SQL 
+and concolitated into a single report 
+
+After importing files 
+NOw lets see data view and model view 
+
+
+
+2 methods to link the tables 
+drag n drop 
+or
+create relation ship 
+
+------------------
+
+data cleaning 
+get data 
+budget 
+select budget 
+
+transform data not load data 
+
+it open another tab - power query editor 
+(help you in data cleaning operation )
+helps you manage and clean your data set 
+
+
+select budget table 
+
+applied steps  - it records and steps and changes 
+
+remove  3 rows 
+use first line as header 
+changed type 
+
+grand total - remove column 
+delete sub totals rows (catogories - do not contain - total )
+
+select all the months and unpovit 
+
+povit means you are trying to povit your data in a way which is 
+directly readable to human 
+
+we have 12 column for 12 months 
+
+Hence we will convert it into rows 
+
+select all 12 column and say unpovit column 
+budget 
+
+-------------------
+
+
+Low level context 
+
+
+------------
+
+date 
+tags = seprate the list out 
+lag and longitude - convert into the maps format 
+
+
+---------------------------
+
+****************************
+
+Day2 
+
+Studying Tableau 
+
+-----------------------
+
+Always try to draw on paper what you want to visualize 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
